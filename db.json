@@ -1,16 +1,112 @@
+
 {
-  "users": [
-    {
-      "id": 1,
-      "name": "Mike"
+  "albums": [
+
+    { "name":"Album 1" ,
+      "coverphoto":"https://unsplash.com/collections/288929/the-classics?photo=xyDQNmT6vSs",
+      "id": 1
+
+    },  
+    { "name":"Album 2",
+      "coverphoto":"https://unsplash.com/collections/288929/the-classics?photo=xyDQNmT6vSs",
+      "id": 2
+
+                
     },
-    {
-      "id": 2,
-      "name": "Jeff"
+    { "name":"Album 3", 
+      "coverphoto":"https://unsplash.com/collections/288929/the-classics?photo=xyDQNmT6vSs",
+      "id": 3
+              
     },
-    {
-      "id": 3,
-      "name": "Gabe"
-    }
-  ]
+    { "name":"Album 4", 
+     "coverphoto":"https://unsplash.com/collections/288929/the-classics?photo=xyDQNmT6vSs",
+     "id": 4
+
+                
+    },
+    { "name":"Album 5",
+      "coverphoto":"https://unsplash.com/collections/288929/the-classics?photo=xyDQNmT6vSs",
+      "id": 5
+
+
+    },          
+    { "name":"Album 6", 
+      "coverphoto":"https://unsplash.com/collections/288929/the-classics?photo=xyDQNmT6vSs",
+      "id": 6
+
+                
+    }  
+  ],
+
+  "photos":[
+          {
+            "id": 1,
+            "name": "Mike",
+            "url":"https://unsplash.com/collections/288929/the-classics?photo=B6yDtYs2IgY",
+            "album_id": 1 
+          },
+          {
+            "id": 2,
+            "name": "Mike",
+            "url":"http://unsplash.com/collections/288929/the-classics?photo=Gs950fkp0ro",
+            "album_id": 1
+          },
+          {
+            "id": 3,
+            "name": "Mike",
+            "url":"http://unsplash.com/collections/288929/the-classics?photo=DsQU3n5o3Sg",
+            "album_id": 1
+          },
+          {
+            "id": 4,
+            "name": "Mike",
+            "url":"http://unsplash.com/collections/288929/the-classics?photo=hzdgFPz1V24",
+            "album_id": 1
+          },
+          {
+            "id": 5,
+            "name": "Mike",
+            "url":"http://unsplash.com/collections/288929/the-classics?photo=B6jl24Z2te0",
+            "album_id": 1
+          },
+          {
+            "id": 6,
+            "name": "Mike",
+            "url":"http://unsplash.com/collections/288929/the-classics?photo=HESPM_hOAMs",
+            "album_id": 6
+          },
+          {
+            "id": 7,
+            "name": "Mike",
+            "url":"https://unsplash.com/collections/288929/the-classics?photo=B6yDtYs2IgY",
+            "album_id": 5
+          },
+          {
+            "id": 8,
+            "name": "Mike",
+            "url":"https://unsplash.com/collections/288929/the-classics?photo=B6yDtYs2IgY",
+            "album_id": 4
+          },
+          {
+            "id": 9,
+            "name": "Mike",
+            "url":"https://unsplash.com/collections/288929/the-classics?photo=B6yDtYs2IgY",
+            "album_id": 3
+          },
+          {
+            "id": 10,
+            "name": "Mike",
+            "url":"https://unsplash.com/collections/288929/the-classics?photo=B6yDtYs2IgY",
+            "album _d": 2
+          },
+
+          {
+          "id": 11,
+          "name": "Mike",
+          "url":"https://unsplash.com/collections/288929/the-classics?photo=B6yDtYs2IgY",
+          "album_id": 1
+          }   
+    ]
 }
+
+

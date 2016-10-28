@@ -1,16 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, browserHistory } from 'react-router';
+import { Router, Route, hashHistory } from 'react-router';
 
 require('assets/styles/style.css')
 
 // Layouts
 import App from 'layouts/app';
 
+import my_albums from 'ui/my_albums';
+import album_view from 'ui/album_view';
+import photos from 'ui/photos';
+
+
 ReactDOM.render((
-  <Router history={browserHistory}>
+  <Router history={hashHistory}>
     <Route component={App}>
-      
-    </Route>
+    	<Route path="/" component={my_albums} />
+    	<Route path="/selectAlbum" component={album_view} />
+    	<Route path="/photos" component={photos} /> 
+	 </Route>
   </Router>
-), document.getElementById('app'));
+    
+),document.getElementById('app')) 
+
+// 
+
+// 
+

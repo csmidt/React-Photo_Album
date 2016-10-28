@@ -1,0 +1,96 @@
+html {
+	box-sizing: border-box;
+}
+
+*,*:after,*:before
+{box-sizing: inherit}
+
+.my_albumContainer {
+	width:90%;
+	margin:auto;
+}
+
+.homeHeader {
+	width: 100%;
+	height:50px;
+	text-align: center;
+	color: #cc0044 ;
+	background-color: #eee;
+}
+
+.albums {
+	display: flex;
+	flex-wrap: wrap;
+	list-style: none;
+	justify-content: space-around;
+}
+
+.albumTitle {
+	height:125px;
+	width:100%;
+	border:1px solid red;
+	margin-top: 274px;
+	padding-top: 60px;
+	text-align: center;
+}
+
+.homeAlbums {
+	width: 30%;
+	height:400px;
+	border:1px solid black;
+	margin-bottom: 20px;
+}
+
+.albumArray {
+	margin:auto;
+	justify-content: space-between;
+}
+
+.albumArray h3 {
+	font-size: 25px;
+	text-align: center;
+
+}
+
+.albumDisplay {
+	display: flex;
+}
+.selectAlbums {
+	width:30%;
+	height:100%;
+
+}
+.select {
+	list-style: none;
+	width: 90%;
+	background-color: #eee;
+	padding-top: 100px;
+	
+}
+
+
+.select button {
+	width: 70%;
+	height: 40px;
+	margin-bottom: 10px;
+
+}
+
+.photoArray {
+	width: 65%;
+	
+	
+}
+.eachAlbum {
+	list-style: none;
+	display:flex;
+	flex-wrap: wrap;
+}
+
+.aPhoto {
+	width: 30%;
+	height: 300px;
+	border:1px solid black;
+	margin:5px 5px 5px 5px;
+}
+
