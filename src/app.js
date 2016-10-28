@@ -16,8 +16,8 @@ ReactDOM.render((
   <Router history={hashHistory}>
     <Route component={App}>
     	<Route path="/" component={my_albums} />
-    	<Route path="/selectAlbum" component={album_view} />
-    	<Route path="/photos" component={photos} /> 
+    	<Route path="/album_view/:id" component={album_view} />
+    	<Route path="/photo/:id" component={photos} />
 	 </Route>
   </Router>
     
@@ -25,5 +25,5 @@ ReactDOM.render((
 
 // 
 
-// 
+//  
 

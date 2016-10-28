@@ -20,12 +20,12 @@ const AlbumCollection = React.createClass({
 	},
 	render:function () {
 		return (
-			<my_albums albums={this.state.albums} />
+			<My_albums albums={this.state.albums} />
 		)
 	}
 })
 
-const my_albums = React.createClass({	
+const My_albums = React.createClass({	
 	render:function(){
 		return (
 			<div className="my_albumContainer">
@@ -33,12 +33,10 @@ const my_albums = React.createClass({
 				<ul className="albums">
 					{this.props.albums.map(album => {
 							return (
-							<li key={albums.id} className="homeAlbums" >
+							<li key={album.id} className="homeAlbums" >
 								<Link to={`/album_view/${album.id}`}>
-									<div className="albumTitle">
-										<img src={album.cover} />
-										<span>{album.name}</span>
-									</div>
+										<img src={album.coverphoto} />	
+										<span className="span">{album.name}</span>
 								</Link>
 							</li>
 						)	

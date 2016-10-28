@@ -31,7 +31,7 @@
 
     },          
     { "name":"Fashion", 
-      "coverphoto":"https://unsplash.com/collections/288929/the-classics?photo=xyDQNmT6vSs",
+      "coverphoto":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmWfvGFQN5s_9agI0ARZLnTq6g_JvFKZLl06gDjilHEYAqzzMn",
       "id": 6
 
                 
@@ -74,7 +74,7 @@
           "name": "Green Flame Shoes",
           "url":"https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQM7hcj0Qgq2IImkYtvwqKiuyd0_O1HgUNzKQeaEYn-sVz2z5W9",
           "album_id": 1
-          }   
+          },
           {
             "id": 60,
             "name": "Hat",
@@ -235,38 +235,38 @@
             "id": 20,
             "name": "High Flying",
             "url":"https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRhkqgW_Rl6Byjs28VqvrUAyrNmhi8KnIXjV_eGSOMr4PtZYTiB1Q",
-            "album _d": 2
+            "album_id": 2
           },
           {
             "id": 21,
             "name": "Snowboarding Chick",
             "url":"https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRD0yiE-8cq0Ko2PMqk0ilM8MNNjDXlhBRUnaRPKBvvUQ-vEduzCQ",
-            "album _d": 2
+            "album_id": 2
           },
           {
             "id": 22,
             "name": "Iron Man",
             "url":"https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTYAvxCVEKmNkX4djHVUttvAW6Z9xftD0Qe0E67HU4iPzWJqoN54w",
-            "album _d": 2
+            "album_id": 2
           },
           {
             "id": 23,
             "name": "Turning",
             "url":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReY_DPADrzwybyYCCOEtjJaN7UH0mvaxWAgf2Mlc3ctnbayAbYdw",
-            "album _d": 2
+            "album_id": 2
           },
           {
             "id": 24,
             "name": "Shredding",
             "url":"https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRxwoocDSYW8gYc7j4HYWWTD4qCloBJ0nSZsnYXHGtPki00mLeM",
-            "album _d": 2
+            "album_id": 2
           },
           {
             "id": 25,
             "name": "I want to go to there",
             "url":"https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRXrbRaQjW-sgSmVP2HwBWKNXlnxSJeXC20aBJ0igvFFe21cwKRyg",
-            "album _d": 2
-          },
+            "album_id": 2
+          }
           
     ]
 }

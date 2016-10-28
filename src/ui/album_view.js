@@ -1,70 +1,86 @@
 import React from 'react'
 import { Link, hashHistory } from 'react-router'
-import { getPhotos } from 'api/albumsapi'
+import { getPhotos, getAlbums } from 'api/albumsapi'
 
 const PhotosContainer = React.createClass ({
 	getInitialState: function () {
 		return {
-			photos:[]
+			photos:[],
+			albums:[]
 		}
 	},
 
-	componenetWillMount: function (){
-		getPhotos().then(photos => {
-			this.setState ({
-				photos: photos.data
+	componentWillMount: function (){
+		this.rerender()
+	},
+
+	rerender: function () {
+		var id = this.props.params.id
+
+		getPhotos(id).then(resp =>{
+			this.setState({
+				photos: resp.data
 			})
 		})
+
+		// getAlbums().then(resp => {
+		// 	this.setState ({
+		// 		albums: resp.data 
+		// 	})
+		// })
 	},
 
 	render: function () {
 		return (
-			<Album_view photos={this.state.photos} />
+			<Album_view photos={this.state.photos} albums={this.state.albums} />
 		)
-	}
+	},
 })
 
-const album_view =  React.createClass({
+
+
+const Album_view =  React.createClass({
 	goBack: function (){
 			hashHistory.goBack()
 		},
 
 	render:function(){
+		console.log('photos',this.props.photos)
 		return (
 			<div className="albumArray">
+				<button onClick={this.goBack}>Go Back</button><br />
 				<h3>My Photos</h3>
 				<div className="albumDisplay">
 					<div className="selectAlbums">
 						<ul className="select">
-							{this.props.photos.map(photos => {
+							{this.props.albums.map(album => {
 								return (
-									<li>
+									<li key={album.id}>
 									<button>
-										<Link to={`/photos/${album.id}`}>{album.name}</Link>
+										<Link to={`/album_view/${album.id}`}>{album.name}</Link>
 									</button>
 									</li>		
-								)	
+								)
 							})}		
 						</ul>
-				</div>
-				<div className ="photoArray">
-					<button onClick={this.goBack}>Go Back</button><br />
-					<ul className="eachAlbum">
-						{this.props.photos.map(photos => {
-							return
-							<li className="aPhoto" key={photo.id}>
-								<Link to={`/photos/${photos.id}`}>
-									<img src={photos.id} />
-								</Link>
-
-							</li>
-							
-						})}
-					</ul>
-
-				</div>
+					</div>
+					<div className ="photoArray">
+						<ul className="albums">
+							{this.props.photos.map(photo => {
+								console.log(photo)
+								return (
+									<li className="homeAlbums" key={photo.id}>
+										<Link to={`/photo/${photo.id}`}>
+											<img src={photo.url} />
+											<span className="span">{photo.name}</span>
+										</Link>
+									</li>
+								)
+							})}
+						</ul>
+					</div>
+				</div>	
 			</div>
-		</div>
 			
 		)
 	}
