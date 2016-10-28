@@ -24,7 +24,7 @@ const PhotosContainer = React.createClass ({
 	}
 })
 
-const Album_view =  React.createClass({
+const album_view =  React.createClass({
 	goBack: function (){
 			hashHistory.goBack()
 		},
@@ -40,34 +40,9 @@ const Album_view =  React.createClass({
 								return (
 									<li>
 									<button>
-										<Link to={`photos/${album.id}`}>Album 1</Link>
+										<Link to={`/photos/${album.id}`}>{album.name}</Link>
 									</button>
-									</li>
-									<li>
-										<button>
-											<Link to={`photos/${album.id}`}>Album 1</Link>
-										</button>
-									</li>
-									<li>
-										<button>
-											<Link to={`photos/${album.id}`}>Album 1</Link>
-										</button>
-									</li>
-									<li>
-										<button>
-											<Link to={`photos/${album.id}`}>Album 1</Link>
-										</button>
-									</li>
-									<li>
-										<button>
-											<Link to={`photos/${album.id}`}>Album 1</Link>
-										</button>
-									</li>
-									<li>
-										<button>
-											<Link to={`photos/${album.id}`}>Album 1</Link>
-										</button>
-									</li>
+									</li>		
 								)	
 							})}		
 						</ul>
@@ -95,4 +70,4 @@ const Album_view =  React.createClass({
 	}
 })
 
-export default album_view
+export default PhotosContainer

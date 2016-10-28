@@ -2,6 +2,12 @@ import React from 'react';
 import { Link, hashHistory } from 'react-router';
 
 
+
+
+
+
+
+
 const onephoto =  React.createClass({
 	goBack: function (){
 			hashHistory.goBack()
@@ -25,4 +31,4 @@ const onephoto =  React.createClass({
 	}
 })
 
-export default 
+export default onephoto

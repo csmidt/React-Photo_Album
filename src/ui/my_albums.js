@@ -50,4 +50,4 @@ const my_albums = React.createClass({
 	}
 })
 
-export default My_albums
+export default AlbumCollection
