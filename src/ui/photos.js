@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, hashHistory } from 'react-router';
 import { getPhoto } from 'api/albumsapi'
+import store from 'store'
 
 
 const PhotoContainer = React.createClass ({
@@ -11,7 +12,6 @@ const PhotoContainer = React.createClass ({
 	},
 
 	componentWillMount: function () {
-		console.log('photoId', this.props.params.id)
 		getPhoto(this.props.params.id).then(photo => {
 			this.setState({
 				photo: photo.data

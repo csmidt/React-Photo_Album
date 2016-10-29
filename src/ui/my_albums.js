@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, hashHistory } from 'react-router'
 import { getAlbums } from 'api/albumsapi'
-
+import store from 'store'
 
 
 const AlbumCollection = React.createClass({
@@ -10,13 +10,15 @@ const AlbumCollection = React.createClass({
 				albums:[]
 			}	
 	},
-
 	componentWillMount: function (){
-		getAlbums().then(albums => {
+		getAlbums()
+
+		store.subscribe(() => {
+			const appState = store.getState()
 			this.setState({
-				albums: albums.data
+				albums: appState.albums
 			})
-		})	
+		})
 	},
 	render:function () {
 		return (

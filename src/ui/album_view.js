@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, hashHistory } from 'react-router'
 import { getPhotos, getAlbums } from 'api/albumsapi'
+import store from 'store'
 
 const PhotosContainer = React.createClass ({
 	getInitialState: function () {
@@ -15,13 +16,20 @@ const PhotosContainer = React.createClass ({
 	},
 
 	rerender: function () {
-		var id = this.props.params.id
+		getPhotos()
 
-		getPhotos(id).then(resp =>{
+		store.subscribe(() => {
+			const appState = store.getState()
 			this.setState({
-				photos: resp.data
+				photos: appstate.photos
 			})
 		})
+
+		//store.subscribe(appstate => {
+		//	this.setState({
+		//		albums: appstate.albums
+		//	})
+		//})
 
 		// getAlbums().then(resp => {
 		// 	this.setState ({
