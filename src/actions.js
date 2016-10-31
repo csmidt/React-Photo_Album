@@ -1,0 +1,4 @@
+export const GET_ALBUMS = 'GET_ALBUMS'
+export const GET_CURRENT_PHOTO = 'GET_PHOTO'
+export const GET_CURRENT_ALBUM = 'GET_CURRENT_ALBUM'
+

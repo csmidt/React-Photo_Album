@@ -7,17 +7,17 @@ require('assets/styles/style.css')
 // Layouts
 import App from 'layouts/app';
 
-import my_albums from 'ui/my_albums';
+import home from 'ui/home';
 import album_view from 'ui/album_view';
-import photos from 'ui/photos';
+import photo from 'ui/photo';
 
 
 ReactDOM.render((
   <Router history={hashHistory}>
     <Route component={App}>
-    	<Route path="/" component={my_albums} />
+    	<Route path="/" component={home} />
     	<Route path="/album_view/:id" component={album_view} />
-    	<Route path="/photo/:id" component={photos} />
+    	<Route path="/photo/:id" component={photo} />
 	 </Route>
   </Router>
     

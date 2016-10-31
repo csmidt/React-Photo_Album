@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link, hashHistory } from 'react-router';
 import { getPhoto } from 'api/albumsapi'
@@ -7,31 +8,38 @@ import store from 'store'
 const PhotoContainer = React.createClass ({
 	getInitialState: function () {
 		return {
-			photo:{}
+			photo:{
+				url:"",
+				name:""
+			}
 		}
 	},
 
 	componentWillMount: function () {
-		getPhoto(this.props.params.id).then(photo => {
+		getPhoto(this.props.params.id)
+
+		this.unsubscribe = store.subscribe(()=>{
+			const state = store.getState()
+
 			this.setState({
-				photo: photo.data
+				photo:state.currentPhoto
 			})
 		})
 	},
-
+	componentWillUnmount: function () {
+		this.unsubcscribe()
+	},
 	render:function () {
 		return (
-			<Onephoto photo={this.state.photo} />
-
+			<Onephoto photo={this.state.currentPhoto} />
 		)
 	}
-
 })
 const Onephoto =  React.createClass({
-	goBack: function (){
+	goBack: function (e){
+		e.preventDefault()
 		hashHistory.goBack()
 	},
-
 	render:function(){
 		return (
 			<div>

@@ -1,56 +1,46 @@
 import React from 'react'
 import { Link, hashHistory } from 'react-router'
-import { getPhotos, getAlbums } from 'api/albumsapi'
+import { getAlbum } from 'api/albumsapi'
 import store from 'store'
 
 const PhotosContainer = React.createClass ({
 	getInitialState: function () {
 		return {
-			photos:[],
-			albums:[]
+			album:{
+				name:'',
+				photos:[]
+			}
 		}
 	},
 
 	componentWillMount: function (){
-		this.rerender()
-	},
+		getAlbum(this.props.params.id)
 
-	rerender: function () {
-		getPhotos()
+		this.unsubscribe = store.subscribe(()=>{
+			const state = store.getState()
 
-		store.subscribe(() => {
-			const appState = store.getState()
 			this.setState({
-				photos: appstate.photos
+				album: state.currentAlbums
 			})
 		})
-
-		//store.subscribe(appstate => {
-		//	this.setState({
-		//		albums: appstate.albums
-		//	})
-		//})
-
-		// getAlbums().then(resp => {
-		// 	this.setState ({
-		// 		albums: resp.data 
-		// 	})
-		// })
 	},
 
-	render: function () {
+	componentWillUnmount: function() {
+		this.unsubscribe()
+	},	
+	render:function () {
 		return (
-			<Album_view photos={this.state.photos} albums={this.state.albums} />
+			<Album_view albums={this.state.currentAlbums} />
 		)
-	},
+	}
 })
 
 
-
 const Album_view =  React.createClass({
-	goBack: function (){
-			hashHistory.goBack()
-		},
+	goBack: function (e){
+		e.preventDefault()
+		hashHistory.goBack()
+	},
 
 	render:function(){
 		console.log('photos',this.props.photos)
@@ -74,7 +64,7 @@ const Album_view =  React.createClass({
 					</div>
 					<div className ="photoArray">
 						<ul className="albums">
-							{this.props.photos.map(photo => {
+							{this.props.albums.photos.map(photo => {
 								console.log(photo)
 								return (
 									<li className="homeAlbums" key={photo.id}>
