@@ -21,12 +21,12 @@ const PhotoContainer = React.createClass ({
 			const state = store.getState()
 
 			this.setState({
-				photo:state.currentPhoto
+				photo: state.currentPhoto
 			})
 		})
 	},
 	componentWillUnmount: function () {
-		this.unsubcscribe()
+		this.unsubscribe()
 	},
 	render:function () {
 		return (
@@ -43,7 +43,7 @@ const Onephoto =  React.createClass({
 		return (
 			<div>
 				<button onClick={this.goBack}>Go Back</button><br />
-				<h3>{this.props.photo.name}</h3>
+				<h3 className="header">{this.props.photo.name}</h3>
 				<div className="singlePhoto">
 					<img src={this.props.photo.url} />
 				</div>

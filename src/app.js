@@ -10,6 +10,7 @@ import App from 'layouts/app';
 import home from 'ui/home';
 import album_view from 'ui/album_view';
 import photo from 'ui/photo';
+//import albumNav from "ui/albumNav";
 
 
 ReactDOM.render((

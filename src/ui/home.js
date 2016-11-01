@@ -34,7 +34,7 @@ const HomeView = React.createClass({
 	render:function(){
 		return (
 			<div className="my_albumContainer">
-				<h3 className="homeHeader">My Albums</h3>
+				<h3 className="header">My Albums</h3>
 				<ul className="pictures">
 					{this.props.albums.map(album => {
 							return (
@@ -42,7 +42,7 @@ const HomeView = React.createClass({
 								<Link to={`/album_view/${album.id}`}>
 									<div className="albumTitle">
 										<img src={album.coverphoto} />
-										<span>{album.name}</span>
+										<span className="span">{album.name}</span>
 									</div>
 								</Link>
 							</li>
