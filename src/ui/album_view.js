@@ -12,7 +12,6 @@ const PhotosContainer = React.createClass ({
 			}
 		}
 	},
-
 	componentWillMount: function (){
 		getAlbum(this.props.params.id)
 
@@ -20,30 +19,25 @@ const PhotosContainer = React.createClass ({
 			const state = store.getState()
 
 			this.setState({
-				album: state.currentAlbums
+				album: state.currentAlbum
 			})
 		})
 	},
-
 	componentWillUnmount: function() {
 		this.unsubscribe()
 	},	
 	render:function () {
 		return (
-			<Album_view albums={this.state.currentAlbums} />
+			<Album_view album={this.state.album} />
 		)
 	}
 })
-
-
 const Album_view =  React.createClass({
 	goBack: function (e){
 		e.preventDefault()
 		hashHistory.goBack()
 	},
-
 	render:function(){
-		console.log('photos',this.props.photos)
 		return (
 			<div className="albumArray">
 				<button onClick={this.goBack}>Go Back</button><br />
@@ -51,7 +45,7 @@ const Album_view =  React.createClass({
 				<div className="albumDisplay">
 					<div className="selectAlbums">
 						<ul className="select">
-							{this.props.albums.map(album => {
+							{/*this.props.albums.map(album => {
 								return (
 									<li key={album.id}>
 									<button>
@@ -59,13 +53,12 @@ const Album_view =  React.createClass({
 									</button>
 									</li>		
 								)
-							})}		
+							})*/}		
 						</ul>
 					</div>
 					<div className ="photoArray">
-						<ul className="albums">
-							{this.props.albums.photos.map(photo => {
-								console.log(photo)
+						<ul className="pictures">
+							{this.props.album.photos.map(photo => {
 								return (
 									<li className="homeAlbums" key={photo.id}>
 										<Link to={`/photo/${photo.id}`}>

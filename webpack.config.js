@@ -11,7 +11,7 @@ module.exports = {
     filename: "bundle.js",
     sourceMapFilename: 'bundle.map'
   },
-  devtool: '#source-map',
+  devtool: '#eval-source-map',
   plugins: [
     // the index.html file is generated below
     HtmlWebpack,

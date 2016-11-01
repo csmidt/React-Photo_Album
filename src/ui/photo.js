@@ -14,7 +14,6 @@ const PhotoContainer = React.createClass ({
 			}
 		}
 	},
-
 	componentWillMount: function () {
 		getPhoto(this.props.params.id)
 
@@ -31,7 +30,7 @@ const PhotoContainer = React.createClass ({
 	},
 	render:function () {
 		return (
-			<Onephoto photo={this.state.currentPhoto} />
+			<Onephoto photo={this.state.photo} />
 		)
 	}
 })
@@ -45,7 +44,6 @@ const Onephoto =  React.createClass({
 			<div>
 				<button onClick={this.goBack}>Go Back</button><br />
 				<h3>{this.props.photo.name}</h3>
-				
 				<div className="singlePhoto">
 					<img src={this.props.photo.url} />
 				</div>

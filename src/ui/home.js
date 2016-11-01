@@ -1,31 +1,36 @@
 import React from 'react'
 import { Link, hashHistory } from 'react-router'
 import { getAlbums } from 'api/albumsapi'
+import * as actions from 'actions'
+import store from 'store'
 
 
-
-const homeContainer = React.createClass({
+const HomeContainer = React.createClass({
 	getInitialState: function (){
 			return {
 				albums:[]
-			}	
+			}
 	},
-
 	componentWillMount: function (){
-		getAlbums().then(albums => {
+		getAlbums()
+
+		this.unsubscribe = store.subscribe(() => {
+			const state = store.getState()
 			this.setState({
-				albums: albums.data
+				albums: state.albums
 			})
-		})	
+		})
+	},
+	componentWillUnmount: function () {
+		this.unsubscribe()
 	},
 	render:function () {
 		return (
-			<homeView albums={this.state.albums} />
+			<HomeView albums={this.state.albums} />
 		)
 	}
 })
-
-const homeView = React.createClass({	
+const HomeView = React.createClass({	
 	render:function(){
 		return (
 			<div className="my_albumContainer">
@@ -33,7 +38,7 @@ const homeView = React.createClass({
 				<ul className="pictures">
 					{this.props.albums.map(album => {
 							return (
-							<li key={albums.id} className="homeAlbums" >
+							<li key={album.id} className="homeAlbums" >
 								<Link to={`/album_view/${album.id}`}>
 									<div className="albumTitle">
 										<img src={album.coverphoto} />
@@ -50,4 +55,4 @@ const homeView = React.createClass({
 	}
 })
 
-export default homeContainer
+export default HomeContainer
