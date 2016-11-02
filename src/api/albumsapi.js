@@ -2,6 +2,7 @@ import axios from 'axios'
 import store from 'store'
 import galleryReducer from 'reducers/galleryReducer'
 import * as actions from 'actions'
+import {hashHistory} from 'react-router'
 
 axios.defaults.baseURL = 'http://localhost:8001/'
 
@@ -23,7 +24,6 @@ export function getAlbum (id) {
 	})
 }
 
-
 export function getPhoto(id) {
 	return axios.get('photos/' + id).then(resp => {
 		store.dispatch ({
@@ -34,3 +34,16 @@ export function getPhoto(id) {
 	})
 }
 
+export function addAlbum (albumObj) {
+	console.log('albumObj', albumObj)
+	return axios.post('albums',albumObj).then(resp =>{
+		console.log('resp', resp)
+		hashHistory.goBack()
+	})
+}
+export function addPhoto (photoObj) {
+	console.log(photoObj)
+	return axios.post('photos', photoObj).then(resp => {
+		hashHistory.push(`/album_view/${photoObj.albumId}`)
+	})
+}

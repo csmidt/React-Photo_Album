@@ -1,13 +1,18 @@
 html {
 	box-sizing: border-box;
+	background-color: #4d4d4d;
 }
 
 *,*:after,*:before
 {box-sizing: inherit}
 
+
+
+
 .my_albumContainer {
 	width:90%;
-	margin:auto;	
+	margin:auto;
+
 }
 
 .header  {
@@ -15,8 +20,10 @@ html {
 	height:50px;
 	text-align: center;
 	color: #cc0044 ;
-	background-color: #eee;
+	background-color: #e6e6e6;
 	padding-top: 17px;
+	border-radius: 5px;
+	box-shadow: 5px 5px 5px #1a1a1a;
 }
 
 .pictures {
@@ -24,30 +31,33 @@ html {
 	flex-wrap: wrap;
 	list-style: none;
 	justify-content: space-around;
+
+
 }
 
 
 .homeAlbums {
-	width: 30%;
+	width: 300px;
+	height:300px;
 	margin-bottom: 20px;
 	overflow: hidden;
-}
-
-.images {
-	height: 250px;
+	box-shadow: 5px 5px 5px #1a1a1a;
 }
 
 
 .span {
-	color:#666;
+	color:#cc0044 ;
 	display: block;
 	text-align: center;
-	height:30px;
-	background-color: #eee;
-	text-decoration: none;
+	height:50px;
+	background-color: #e6e6e6;
+	margin-top: 2px;
+	padding-top: 15px;
 }
 
-
+a {
+	text-decoration: none;
+}
 .albumArray {
 	display: flex;
 	margin:auto;
@@ -56,40 +66,68 @@ html {
 }
 
 
-.selectAlbums {
-	width:30%;
-	border:1px solid #eee;
-	align-items: stretch;
-}
-
 .select {
 	list-style: none;
-	width: 30%;
-	background-color: #eee;
+	width: 400px;
+	background-color: #e6e6e6;
 	padding-top: 100px;	
 	align-items: stretch;
+	box-shadow: 5px 5px 5px #1a1a1a;
 }
 
 .select button {
 	width: 80%;
-	height:40px;
+	height:50px;
 	margin-bottom: 20px;
 	border-radius: 10px;
+	background-color: #4d4d4d;
+	box-shadow: 5px 5px 5px #1a1a1a;
+	color:#e6e6e6;
+	outline: none;
 }
 
-.navButton {
-	text-decoration: none;
-	color:#fff;
-}
 
 .photoArray {
 	width: 65%;
 }
 
+.singlePhoto {
+	box-shadow: 5px 5px 5px #1a1a1a;
+	width:300px;
+	margin:auto;
+}
 
 img {
 	display: block;
 	margin: auto;
+	width:300px;
+	height:250px;
 }
 
+form {
+	width: 300px;
+	height:300px;
+	background-color: #e6e6e6;
+	display: flex;
+	flex-direction: column; 
+	margin:auto;
+	box-shadow: 5px 5px 5px #1a1a1a;
+	padding-top: 10px;
+}
 
+input {
+;	height: 40px;
+	width:200px;
+	margin-top: 10px;
+	text-align: center;
+	margin:auto;
+	box-shadow: 2px 2px 2px #1a1a1a;
+}
+
+.submit {
+	height:40px;
+	margin-top: 15px;
+	width: 200px;
+	margin:auto;
+	box-shadow: 2px 2px 2px #1a1a1a;
+}

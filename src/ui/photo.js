@@ -42,7 +42,7 @@ const Onephoto =  React.createClass({
 	render:function(){
 		return (
 			<div>
-				<button onClick={this.goBack}>Go Back</button><br />
+				<button onClick={this.goBack}>Back to Albums</button><br />
 				<h3 className="header">{this.props.photo.name}</h3>
 				<div className="singlePhoto">
 					<img src={this.props.photo.url} />

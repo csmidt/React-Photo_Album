@@ -7,10 +7,9 @@ import store from 'store'
 const PhotosContainer = React.createClass ({
 	getInitialState: function () {
 		return {
-			album:{
-				name:'',
-				photos:[]
-			},
+			name:'',
+			id:'',
+			photos:[],
 			albums:[]
 		}
 	},
@@ -23,9 +22,10 @@ const PhotosContainer = React.createClass ({
 
 		this.unsubscribe = store.subscribe(()=>{
 			const state = store.getState()
-
 			this.setState({
-				album: state.currentAlbum,
+				name: state.currentAlbum.name,
+				id: state.currentAlbum.id,
+				photos: state.currentAlbum.photos,
 				albums: state.albums
 			})
 		})
@@ -35,36 +35,36 @@ const PhotosContainer = React.createClass ({
 	},	
 	render:function () {
 		return (
-			<Album_view albums={this.state.albums} album={this.state.album} />
+			<Album_view {...this.state} />
 		)
 	}
 })
 const Album_view =  React.createClass({
-	goBack: function (e){
+	navToHome: function (e){
 		e.preventDefault()
-		hashHistory.goBack()
+		hashHistory.push('/')
+	},
+	navToPhotoAdd: function(e) {
+		e.preventDefault()
+		hashHistory.push(`/album/${this.props.id}/add`)
 	},
 	render:function(){
 		return (
 			<div className="albumDisplay">
-				<button onClick={this.goBack}>Go Back</button><br />
-				<h3 className="header">{this.props.album.name}</h3>
+				<button onClick={this.navToHome}>Back to Home</button><br />
+				<h3 className="header">{this.props.name}</h3>
 				<div className="albumArray">
-						
 							<ul className="select">
 								{this.props.albums.map(album => (
 									<li key={album.id}>
-										<button>
-											<Link to={`/album_view/${album.id}`} className="navButton">
+										<Link to={`/album_view/${album.id}`} className="navButton"><button>
 											{album.name}
-											</Link>
-										</button>
-									</li>		
+										</button></Link>
+									</li>
 								))}		
-							</ul>					
-											
+							</ul>																
 							<ul className="pictures">
-								{this.props.album.photos.map(photo => {
+								{this.props.photos.map(photo => {
 									return (
 										<li className="homeAlbums" key={photo.id}>
 											<Link to={`/photo/${photo.id}`}>
@@ -76,6 +76,9 @@ const Album_view =  React.createClass({
 										</li>
 									)
 								})}
+								<li>
+										<button className="homeAlbums" onClick={this.navToPhotoAdd}>Add Photo</button>
+									</li>
 							</ul>
 						
 				</div>	
