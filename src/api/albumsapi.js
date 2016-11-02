@@ -47,3 +47,10 @@ export function addPhoto (photoObj) {
 		hashHistory.push(`/album_view/${photoObj.albumId}`)
 	})
 }
+
+export function deletePhoto (id, albumId) {
+	return axios.delete(`photos/${id}`).then(resp => {
+		getAlbum(albumId)
+		hashHistory.push(`/album_view/${albumId}`)	
+	})
+}

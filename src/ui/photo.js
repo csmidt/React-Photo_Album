@@ -3,12 +3,14 @@ import React from 'react';
 import { Link, hashHistory } from 'react-router';
 import { getPhoto } from 'api/albumsapi'
 import store from 'store'
+import {deletePhoto} from 'api/albumsapi'
 
 
 const PhotoContainer = React.createClass ({
 	getInitialState: function () {
 		return {
 			photo:{
+				id:"",
 				url:"",
 				name:""
 			}
@@ -39,6 +41,12 @@ const Onephoto =  React.createClass({
 		e.preventDefault()
 		hashHistory.goBack()
 	},
+	deletePhoto: function (e) {
+		var id = e.target.id
+
+		deletePhoto(id, this.props.photo.albumId)
+	},
+
 	render:function(){
 		return (
 			<div>
@@ -47,6 +55,7 @@ const Onephoto =  React.createClass({
 				<div className="singlePhoto">
 					<img src={this.props.photo.url} />
 				</div>
+				<button id={this.props.photo.id} onClick={this.deletePhoto}>Delete Photo</button>
 			</div>
 	
 		)
