@@ -54,3 +54,10 @@ export function deletePhoto (id, albumId) {
 		hashHistory.push(`/album_view/${albumId}`)	
 	})
 }
+
+export function deleteAlbum (albumId) {
+	return axios.delete(`album/${id}`).then(resp => {
+		getAlbums(albumId)
+		hashHistory.push(`/home/${albumID}`)
+	})
+}

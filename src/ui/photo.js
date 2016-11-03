@@ -50,12 +50,15 @@ const Onephoto =  React.createClass({
 	render:function(){
 		return (
 			<div>
+				<div className="navButtons">
 				<button onClick={this.goBack}>Back to Albums</button><br />
+				<button id={this.props.photo.id} onClick={this.deletePhoto}>Delete Photo</button>
+				</div>
 				<h3 className="header">{this.props.photo.name}</h3>
 				<div className="singlePhoto">
 					<img src={this.props.photo.url} />
 				</div>
-				<button id={this.props.photo.id} onClick={this.deletePhoto}>Delete Photo</button>
+				
 			</div>
 	
 		)

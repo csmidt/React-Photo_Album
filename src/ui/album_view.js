@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, hashHistory } from 'react-router'
-import { getAlbum, getAlbums } from 'api/albumsapi'
+import { getAlbum, getAlbums, deleteAlbum } from 'api/albumsapi'
 import store from 'store'
 
 
@@ -48,10 +48,19 @@ const Album_view =  React.createClass({
 		e.preventDefault()
 		hashHistory.push(`/album/${this.props.id}/add`)
 	},
+	deleteAlbum: function (e) {
+		var id = e.target.id
+
+		deleteAlbum(id, this.props.albums.id)
+	},
+
 	render:function(){
 		return (
 			<div className="albumDisplay">
-				<button onClick={this.navToHome}>Back to Home</button><br />
+				<div className="navButtons">
+					<button onClick={this.navToHome}>Back to Home</button><br />
+					<button id={this.props.albums.id} onClick={this.deleteAlbum}>Delete Album</button>
+				</div>
 				<h3 className="header">{this.props.name}</h3>
 				<div className="albumArray">
 							<ul className="select">

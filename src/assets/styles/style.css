@@ -132,6 +132,7 @@ input {
 	box-shadow: 2px 2px 2px #1a1a1a;
 }
 
-button {
-	margin:auto;
+.navButtons {
+	display: flex;
+	justify-content: space-between;
 }
